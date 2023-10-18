@@ -2,7 +2,11 @@ $.ajax({
     type: "GET",
     url: "https://it-its.id/api/movies",
     success: function (data) {
-        console.log(data[0])
+        console.log("Data successfully retrieved from API!");
+    },
+    error: function (xhr,status,error) {
+        console.log(error);
+        $(".container").append(`<h1 style="text-align: center">API not found. Please refresh or try again later</h1>`)
     }
 }).then(function (data) {
     x = 0;
